@@ -1,0 +1,30 @@
+安装依赖
+yum -y install gcc make zlib-devel pcre pcre-devel openssl-devel
+
+下载安装包
+wget http://nginx.org/download/nginx-1.18.0.tar.gz
+
+创建目录
+mkdir /opt/nginx
+
+解压tar -zxvf nginx-1.18.0.tar.gz -C /opt/nginx
+
+进入nginx目录
+./configure --prefix=/opt/nginx
+
+执行命令安装
+make & make install
+
+在安装目录的sbin中可以看到nginx的可执行文件
+./nginx -h
+
+执行命令:/opt/nginx/sbin/nginx
+
+如果无法启动请查看是否端口占用和已启动nginx
+ 查看80端口是否被占用
+netstat -an | grep 80
+ 查看什么应用占用
+lsof -i:80
+
+输入ip地址访问
+192.168.0.103（自己电脑配置的ip）
